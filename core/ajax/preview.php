@@ -44,7 +44,7 @@ try {
 		$preview->setKeepAspect($keepAspect);
 	}
 
-	$preview->show();
+	$preview->showPreview();
 } catch (\Exception $e) {
 	\OC_Response::setStatus(500);
 	\OC_Log::write('core', $e->getmessage(), \OC_Log::DEBUG);

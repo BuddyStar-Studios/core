@@ -539,20 +539,12 @@ class Preview {
 	 * @brief show preview
 	 * @return void
 	 */
-	public function showPreview() {
+	public function showPreview($mimeType = null) {
 		\OCP\Response::enableCaching(3600 * 24); // 24 hours
 		if (is_null($this->preview)) {
 			$this->getPreview();
 		}
-		$this->preview->show('image/png');
-	}
-
-	/**
-	 * @brief show preview
-	 * @return void
-	 */
-	public function show() {
-		$this->showPreview();
+		$this->preview->show($mimeType);
 	}
 
 	/**
